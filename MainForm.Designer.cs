@@ -35,6 +35,7 @@
             this.dlgSaveSav = new System.Windows.Forms.SaveFileDialog();
             this.lblFolderTactics = new System.Windows.Forms.Label();
             this.btnOpenFolder = new System.Windows.Forms.Button();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.btnRefreshFolder = new System.Windows.Forms.Button();
             this.txtLoadFolder = new System.Windows.Forms.TextBox();
             this.btnAutoAssign = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.chkUpdateName = new System.Windows.Forms.CheckBox();
             this.btnEditSavTacticName = new System.Windows.Forms.Button();
             this.btnResetSavTacticNames = new System.Windows.Forms.Button();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // dlgLoadSav
@@ -94,11 +94,22 @@
             this.btnOpenFolder.Location = new System.Drawing.Point(142, 4);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(108, 25);
-            this.btnOpenFolder.TabIndex = 7;
+            this.btnOpenFolder.TabIndex = 0;
             this.btnOpenFolder.Text = "Select folder...";
             this.btnOpenFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOpenFolder.UseVisualStyleBackColor = true;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "Edit.png");
+            this.imageList.Images.SetKeyName(1, "OpenFile.png");
+            this.imageList.Images.SetKeyName(2, "OpenFolder.png");
+            this.imageList.Images.SetKeyName(3, "Refresh.png");
+            this.imageList.Images.SetKeyName(4, "Save.png");
+            this.imageList.Images.SetKeyName(5, "Undo.png");
             // 
             // btnRefreshFolder
             // 
@@ -109,7 +120,7 @@
             this.btnRefreshFolder.Location = new System.Drawing.Point(256, 4);
             this.btnRefreshFolder.Name = "btnRefreshFolder";
             this.btnRefreshFolder.Size = new System.Drawing.Size(89, 25);
-            this.btnRefreshFolder.TabIndex = 8;
+            this.btnRefreshFolder.TabIndex = 1;
             this.btnRefreshFolder.Text = "Reload";
             this.btnRefreshFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefreshFolder.UseVisualStyleBackColor = true;
@@ -121,14 +132,14 @@
             this.txtLoadFolder.Name = "txtLoadFolder";
             this.txtLoadFolder.ReadOnly = true;
             this.txtLoadFolder.Size = new System.Drawing.Size(333, 20);
-            this.txtLoadFolder.TabIndex = 10;
+            this.txtLoadFolder.TabIndex = 2;
             // 
             // btnAutoAssign
             // 
             this.btnAutoAssign.Location = new System.Drawing.Point(351, 188);
             this.btnAutoAssign.Name = "btnAutoAssign";
             this.btnAutoAssign.Size = new System.Drawing.Size(133, 25);
-            this.btnAutoAssign.TabIndex = 11;
+            this.btnAutoAssign.TabIndex = 4;
             this.btnAutoAssign.Text = "Assign by file name >>";
             this.btnAutoAssign.UseVisualStyleBackColor = true;
             this.btnAutoAssign.Click += new System.EventHandler(this.btnAutoAssign_Click);
@@ -160,7 +171,7 @@
             this.btnLoadSav.Location = new System.Drawing.Point(926, 4);
             this.btnLoadSav.Name = "btnLoadSav";
             this.btnLoadSav.Size = new System.Drawing.Size(103, 25);
-            this.btnLoadSav.TabIndex = 15;
+            this.btnLoadSav.TabIndex = 6;
             this.btnLoadSav.Text = "Load .sav file";
             this.btnLoadSav.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoadSav.UseVisualStyleBackColor = true;
@@ -175,7 +186,7 @@
             this.btnSaveSav.Location = new System.Drawing.Point(490, 857);
             this.btnSaveSav.Name = "btnSaveSav";
             this.btnSaveSav.Size = new System.Drawing.Size(99, 25);
-            this.btnSaveSav.TabIndex = 17;
+            this.btnSaveSav.TabIndex = 8;
             this.btnSaveSav.Text = "Save to .sav";
             this.btnSaveSav.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveSav.UseVisualStyleBackColor = true;
@@ -190,7 +201,7 @@
             this.btnSaveAIPack.Location = new System.Drawing.Point(595, 857);
             this.btnSaveAIPack.Name = "btnSaveAIPack";
             this.btnSaveAIPack.Size = new System.Drawing.Size(115, 25);
-            this.btnSaveAIPack.TabIndex = 18;
+            this.btnSaveAIPack.TabIndex = 9;
             this.btnSaveAIPack.Text = "Save as AI pack";
             this.btnSaveAIPack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveAIPack.UseVisualStyleBackColor = true;
@@ -205,7 +216,7 @@
             this.btnSaveTct.Location = new System.Drawing.Point(716, 857);
             this.btnSaveTct.Name = "btnSaveTct";
             this.btnSaveTct.Size = new System.Drawing.Size(114, 25);
-            this.btnSaveTct.TabIndex = 19;
+            this.btnSaveTct.TabIndex = 10;
             this.btnSaveTct.Text = "Save as .tct files";
             this.btnSaveTct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveTct.UseVisualStyleBackColor = true;
@@ -230,7 +241,7 @@
             this.lstSavTactics.MultiSelect = false;
             this.lstSavTactics.Name = "lstSavTactics";
             this.lstSavTactics.Size = new System.Drawing.Size(539, 816);
-            this.lstSavTactics.TabIndex = 20;
+            this.lstSavTactics.TabIndex = 7;
             this.lstSavTactics.UseCompatibleStateImageBehavior = false;
             this.lstSavTactics.View = System.Windows.Forms.View.Details;
             this.lstSavTactics.SelectedIndexChanged += new System.EventHandler(this.lstSavTactics_SelectedIndexChanged);
@@ -287,7 +298,7 @@
             this.lstFolderTactics.MultiSelect = false;
             this.lstFolderTactics.Name = "lstFolderTactics";
             this.lstFolderTactics.Size = new System.Drawing.Size(330, 808);
-            this.lstFolderTactics.TabIndex = 21;
+            this.lstFolderTactics.TabIndex = 3;
             this.lstFolderTactics.UseCompatibleStateImageBehavior = false;
             this.lstFolderTactics.View = System.Windows.Forms.View.Details;
             this.lstFolderTactics.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstFolderTactics_ItemDrag);
@@ -305,7 +316,7 @@
             this.chkUpdateName.Location = new System.Drawing.Point(359, 270);
             this.chkUpdateName.Name = "chkUpdateName";
             this.chkUpdateName.Size = new System.Drawing.Size(119, 17);
-            this.chkUpdateName.TabIndex = 22;
+            this.chkUpdateName.TabIndex = 5;
             this.chkUpdateName.Text = "Update tactic name";
             this.chkUpdateName.UseVisualStyleBackColor = true;
             // 
@@ -318,7 +329,7 @@
             this.btnEditSavTacticName.Location = new System.Drawing.Point(836, 857);
             this.btnEditSavTacticName.Name = "btnEditSavTacticName";
             this.btnEditSavTacticName.Size = new System.Drawing.Size(84, 25);
-            this.btnEditSavTacticName.TabIndex = 23;
+            this.btnEditSavTacticName.TabIndex = 11;
             this.btnEditSavTacticName.Text = "Edit name";
             this.btnEditSavTacticName.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditSavTacticName.UseVisualStyleBackColor = true;
@@ -333,22 +344,11 @@
             this.btnResetSavTacticNames.Location = new System.Drawing.Point(926, 857);
             this.btnResetSavTacticNames.Name = "btnResetSavTacticNames";
             this.btnResetSavTacticNames.Size = new System.Drawing.Size(100, 25);
-            this.btnResetSavTacticNames.TabIndex = 24;
+            this.btnResetSavTacticNames.TabIndex = 12;
             this.btnResetSavTacticNames.Text = "Reset names";
             this.btnResetSavTacticNames.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetSavTacticNames.UseVisualStyleBackColor = true;
             this.btnResetSavTacticNames.Click += new System.EventHandler(this.btnResetSavTacticName_Click);
-            // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "Edit.png");
-            this.imageList.Images.SetKeyName(1, "OpenFile.png");
-            this.imageList.Images.SetKeyName(2, "OpenFolder.png");
-            this.imageList.Images.SetKeyName(3, "Refresh.png");
-            this.imageList.Images.SetKeyName(4, "Save.png");
-            this.imageList.Images.SetKeyName(5, "Undo.png");
             // 
             // MainForm
             // 

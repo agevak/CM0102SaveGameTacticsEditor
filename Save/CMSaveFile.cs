@@ -14,17 +14,21 @@ namespace CM.Save
 
         public CMSaveFile() { }
 
-        public void Load(string filename)
+        public void Load(string filename, bool cache)
         {
             if (filename == null) throw new ArgumentNullException("filename must be not null.");
             if (string.IsNullOrWhiteSpace(filename)) throw new ArgumentException("filename must be not empty.");
             if (!File.Exists(filename)) throw new ArgumentException($"{filename} file doesn't exist.");
-            fileContent = File.ReadAllBytes(filename);
             saveReader = new SaveReader();
-            saveReader.Load(fileContent);
+            if (cache)
+            {
+                fileContent = File.ReadAllBytes(filename);
+                saveReader.Load(fileContent);
+            }
+            else saveReader.Load(filename);
         }
 
-        public void Save(string filename, bool? compressed = true)
+        public void Save(string filename, bool? compressed = null)
         {
             if (filename == null) throw new ArgumentNullException("filename must be not null.");
             if (string.IsNullOrWhiteSpace(filename)) throw new ArgumentException("filename must be not empty.");

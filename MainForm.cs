@@ -114,7 +114,7 @@ namespace CM
             try
             {
                 cmSaveFile = new CMSaveFile();
-                cmSaveFile.Load(savFilename);
+                cmSaveFile.Load(savFilename, true);
                 IList<Tactic> tactics = cmSaveFile.ExtractAITactics();
                 lstSavTactics.BeginUpdate();
                 for (int i = 0; i < lstSavTactics.Items.Count; i++)

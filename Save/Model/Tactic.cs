@@ -38,7 +38,7 @@ namespace CM.Save.Model
             return fileMarker.Concat(First250).Concat(Crc).Concat(Next1115).Concat(Next88).Concat(Last11).Concat(new byte[] { 0xF2, 0xFF, 0xFF, 0xF2 }).ToArray();
         }
 
-        public static string TrimName(string name) => name.Substring(0, NAME_MAX_LENGTH);
+        public static string TrimName(string name) => (name.Length <= NAME_MAX_LENGTH) ? name : name.Substring(0, NAME_MAX_LENGTH);
 
         public static Tactic FromFile(string name, byte[] content)
         {
